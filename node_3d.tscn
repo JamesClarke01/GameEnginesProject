@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ber28avkqievq"]
+
+[ext_resource type="Script" path="res://Node3D.gd" id="1_0pxew"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_0pxew")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="XRController3D" type="XRController3D" parent="XROrigin3D"]
+
+[node name="XRController3D2" type="XRController3D" parent="XROrigin3D"]
