@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://ber28avkqievq"]
+
+[ext_resource type="PackedScene" path="res://Lightsaber.tscn" id="1_a1qa8"]
+[ext_resource type="PackedScene" uid="uid://xyp0tfguhqn2" path="res://enemy.tscn" id="2_4rbjo"]
+
+[sub_resource type="GDScript" id="GDScript_2jau5"]
+script/source = "extends Node3D
+
+var xr_interface: XRInterface
+
+func _ready():
+	xr_interface = XRServer.find_interface(\"OpenXR\")
+	if xr_interface and xr_interface.is_initialized():
+		print(\"OpenXR initialised successfully\")
+
+		# Turn off v-sync!
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+
+		# Change our main viewport to output to the HMD
+		get_viewport().use_xr = true
+	else:
+		print(\"OpenXR not initialized, please check if your headset is connected\")
+"
+
+[sub_resource type="BoxMesh" id="BoxMesh_ys2se"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vt1cu"]
+size = Vector3(50, 1, 50)
+
+[node name="Node3D" type="Node3D"]
+script = SubResource("GDScript_2jau5")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="rightHand" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="lightSaber" parent="XROrigin3D/rightHand" instance=ExtResource("1_a1qa8")]
+transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, 0.3, 0, -0.3, -1.31134e-08, 0, 0, 0)
+
+[node name="leftHand" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("BoxMesh_ys2se")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_vt1cu")
+
+[node name="enemy1" parent="." instance=ExtResource("2_4rbjo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -3.684)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.04301, -0.0987598)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
