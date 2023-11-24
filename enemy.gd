@@ -10,13 +10,11 @@ func shoot():
 	
 	var boltInstance = boltScene.instantiate()
 	
-
-	
 	var mainScene = $".."
 
-	mainScene.add_child(boltInstance)
+	boltInstance.position = Vector3(position.x, position.y + 0.7, position.z + 0.5)
 	
-	boltInstance.position = Vector3(position.x, position.y + 0.7, position.z)
+	mainScene.add_child(boltInstance)
 	
 	#boltInstance.Transform.x = 5
 
@@ -32,7 +30,7 @@ func startTimer():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	startTimer()
-	
+	#shoot()
 	
 
 

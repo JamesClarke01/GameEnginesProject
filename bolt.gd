@@ -2,12 +2,15 @@ extends Node3D
 
 @export var speed = 5.0
 
-
+var forward
+var player
+var target
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
-	
-	pass # Replace with function body.
+	player = $"../XROrigin3D/XRCamera3D"
+	forward = (player.position - position).normalized()
+	look_at(player.position, Vector3.UP)
 
 
 
@@ -18,21 +21,10 @@ func _process(delta):
 	pass
 
 
-
-
 func _physics_process(delta):
-	# Local space forward
-	
-	var target = $"../Target"
-	#print(target.position)
-	#var forward = (target.position - position).normalized()
-	var forward = Vector3.BACK	
+		
 	var v  = speed * forward * delta		
-	
-	# Transform to world space by multiplying by
-	#var q = global_transform.basis.get_rotation_quaternion() 
-	#v = q * v
-	
+			
 	global_position += v
 	
 
