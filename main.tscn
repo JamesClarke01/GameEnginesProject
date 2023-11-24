@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ber28avkqievq"]
+[gd_scene load_steps=6 format=3 uid="uid://ber28avkqievq"]
 
 [ext_resource type="PackedScene" uid="uid://d4h0f6rehmo0c" path="res://Lightsaber.tscn" id="1_a1qa8"]
 [ext_resource type="PackedScene" uid="uid://xyp0tfguhqn2" path="res://enemy.tscn" id="2_4rbjo"]
@@ -26,10 +26,6 @@ func _ready():
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vt1cu"]
 size = Vector3(50, 1, 50)
-
-[sub_resource type="BoxMesh" id="BoxMesh_5w4sv"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jir1y"]
 
 [node name="Main" type="Node3D"]
 script = SubResource("GDScript_2jau5")
@@ -63,12 +59,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -3.684)
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.04301, -0.0987598)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-
-[node name="Target" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35442, -0.412898, -1.24489)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Target"]
-mesh = SubResource("BoxMesh_5w4sv")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Target"]
-shape = SubResource("BoxShape3D_jir1y")
