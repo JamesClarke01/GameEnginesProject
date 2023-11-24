@@ -10,17 +10,14 @@ size = Vector3(0.06, 0.06, 0.3)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2kw6"]
 albedo_color = Color(1, 0.0352941, 0.0352941, 1)
 
-[node name="Node3D" type="Node3D"]
+[node name="Bolt" type="CharacterBody3D"]
 script = ExtResource("1_n7pad")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-gravity_scale = 0.0
-linear_velocity = Vector3(0, 0, 5)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_owb1s")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.3, 0, 0, 0)
 mesh = SubResource("SphereMesh_tn0fi")
+skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_y2kw6")

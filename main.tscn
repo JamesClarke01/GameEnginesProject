@@ -27,7 +27,7 @@ func _ready():
 [sub_resource type="BoxShape3D" id="BoxShape3D_vt1cu"]
 size = Vector3(50, 1, 50)
 
-[node name="Node3D" type="Node3D"]
+[node name="Main" type="Node3D"]
 script = SubResource("GDScript_2jau5")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
