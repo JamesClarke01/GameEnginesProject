@@ -24,5 +24,3 @@ shape = SubResource("BoxShape3D_owb1s")
 transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.3, 0, 0, 0)
 mesh = SubResource("SphereMesh_tn0fi")
 surface_material_override/0 = SubResource("StandardMaterial3D_y2kw6")
-
-[connection signal="body_entered" from="RigidBody3D" to="." method="_on_rigid_body_3d_body_entered"]

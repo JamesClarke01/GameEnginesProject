@@ -30,8 +30,3 @@ func destroyIfOutOfBounds(): 	#Not Working
 		global_position.z > Z_HIGH_BOUND):
 			print("Destroy")
 			queue_free()	
-
-"""
-func _on_rigid_body_3d_body_entered(body):
-	print("Body entered")	
-"""

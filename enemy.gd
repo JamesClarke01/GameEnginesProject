@@ -19,7 +19,7 @@ func shoot():
 	#boltInstance.Transform.x = 5
 	
 	
-func startTimer():
+func setupTimer():
 	timer = Timer.new()
 	add_child(timer)	
 	timer.timeout.connect(shoot) #call shoot function when timer expires
@@ -29,10 +29,8 @@ func startTimer():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	startTimer()
-	
-	
-	
+	#setupTimer()
+	shoot()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
