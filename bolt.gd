@@ -2,17 +2,15 @@ extends Node3D
 
 @export var speed = 5.0
 
-var forward
+var direction
 var player
 var target
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
 	player = $"../XROrigin3D/XRCamera3D"
-	forward = (player.position - position).normalized()
+	direction = (player.position - position).normalized()
 	look_at(player.position, Vector3.UP)
-
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -23,13 +21,12 @@ func _process(delta):
 
 func _physics_process(delta):
 		
-	var v  = speed * forward * delta		
+	var v  = speed * direction * delta		
 			
 	global_position += v
 	
-
-
-
+func reverseDirection():
+	direction = -direction
 
 func destroyIfOutOfBounds(): 	#Not Working
 	#boundaries of scene
@@ -50,7 +47,7 @@ func destroyIfOutOfBounds(): 	#Not Working
 			print("Destroy")
 			queue_free()	
 
-"""
-func _on_rigid_body_3d_body_entered(body):
-	print("Body entered")	
-"""
+
+func _on_area_3d_body_entered(body):
+	if body.name == "SaberBlade":
+		reverseDirection()
