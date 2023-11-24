@@ -2,24 +2,26 @@ extends RigidBody3D
 
 var timer = null
 
-
-
+#var mainScene = load("res://bolt.tscn")
 
 func shoot():
 	print("Shoot")
 	var boltScene = load("res://bolt.tscn")
+	
 	var boltInstance = boltScene.instantiate()
 	
-	#boltInstance.linearVelocity.x = 5
-	boltInstance.position.z = 0.5
-	boltInstance.position.y = 0.5 
-	#boltInstance.position.y = 0.5
+
 	
-	add_child(boltInstance)
+	var mainScene = $".."
+
+	mainScene.add_child(boltInstance)
+	
+	boltInstance.position = Vector3(position.x, position.y + 0.7, position.z)
+	
 	#boltInstance.Transform.x = 5
+
 	
-	
-func setupTimer():
+func startTimer():
 	timer = Timer.new()
 	add_child(timer)	
 	timer.timeout.connect(shoot) #call shoot function when timer expires
@@ -29,8 +31,9 @@ func setupTimer():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#setupTimer()
-	shoot()
+	startTimer()
+	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
