@@ -25,13 +25,14 @@ func _physics_process(delta):
 	
 	var target = $"../Target"
 	#print(target.position)
-	#var forward = (target.position - position).normalized()
-	var forward = Vector3.BACK	
+	var forward = (target.position - position).normalized()
+	#var forward = Vector3.BACK	
+	
+	look_at(target.position, Vector3.UP)
+	
 	var v  = speed * forward * delta		
 	
-	# Transform to world space by multiplying by
-	#var q = global_transform.basis.get_rotation_quaternion() 
-	#v = q * v
+	
 	
 	global_position += v
 	
