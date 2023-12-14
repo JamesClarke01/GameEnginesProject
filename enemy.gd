@@ -9,12 +9,11 @@ func shoot():
 	var boltScene = load("res://bolt.tscn")
 	
 	var boltInstance = boltScene.instantiate()
-	
-	var mainScene = $".."
 
-	boltInstance.position = Vector3(position.x, position.y + 0.7, position.z + 0.5)
+	boltInstance.position = $Marker3D.global_position
+	print("enemy position: " + str(global_position) + " | marker position: " + str($Marker3D.global_position))
 	
-	mainScene.add_child(boltInstance)
+	get_parent().add_child(boltInstance)
 	
 	#boltInstance.Transform.x = 5
 

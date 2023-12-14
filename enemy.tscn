@@ -9,6 +9,8 @@ size = Vector3(0.5, 1.5, 0.5)
 size = Vector3(0.5, 1.5, 0.5)
 
 [node name="Enemy" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 31
 script = ExtResource("1_s4358")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -19,3 +21,6 @@ shape = SubResource("BoxShape3D_r1gpq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 mesh = SubResource("BoxMesh_7lf6m")
 skeleton = NodePath("")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185605, 1.03385, 0.442089)
