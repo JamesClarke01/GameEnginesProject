@@ -1,6 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://57q7hhomocdh"]
-
-[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/world_grab_area.gd" id="1_uxhq5"]
-
-[node name="WorldGrabArea" type="Area3D"]
-script = ExtResource("1_uxhq5")
+version https://git-lfs.github.com/spec/v1
+oid sha256:bbe0d09b41d42f86191764d4f3b8fa0a72a9d2ea3c290927e9b7e38354c2e75a
+size 238
