@@ -2,7 +2,7 @@ extends RigidBody3D
 
 var timer = null
 
-#var mainScene = load("res://bolt.tscn")
+signal on_enemy_died
 
 func shoot():
 	print("Shoot")
@@ -13,11 +13,10 @@ func shoot():
 	boltInstance.position = $Marker3D.global_position
 	print("enemy position: " + str(global_position) + " | marker position: " + str($Marker3D.global_position))
 	
+	#Make bolt a child of parent scene (Main)
 	get_parent().add_child(boltInstance)
-	
-	#boltInstance.Transform.x = 5
 
-	
+
 func startTimer():
 	timer = Timer.new()
 	add_child(timer)	
@@ -36,3 +35,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_area_3d_body_entered(body):
+	print("Body entered enemy")
+	if body.name == "SaberBlade" or body.name == "Bolt":
+		print("saber or bolt entered")
+		
+		on_enemy_died.emit()
+		queue_free()
