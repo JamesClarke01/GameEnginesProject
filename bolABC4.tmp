@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1cjyx0cu0774"]
+
+[ext_resource type="Script" path="res://bolt.gd" id="1_n7pad"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_owb1s"]
+size = Vector3(0.3, 0.06, 0.06)
+
+[sub_resource type="SphereMesh" id="SphereMesh_tn0fi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2kw6"]
+albedo_color = Color(1, 0.0352941, 0.0352941, 1)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_n7pad")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_owb1s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0, 0, 0)
+mesh = SubResource("SphereMesh_tn0fi")
+surface_material_override/0 = SubResource("StandardMaterial3D_y2kw6")
