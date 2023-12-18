@@ -8,8 +8,8 @@ var target
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
-	player = $"../XROrigin3D/XRCamera3D"
-	direction = (player.global_position - position).normalized()
+	player = $"../../XROrigin3D/XRCamera3D"
+	direction = (player.global_position - global_position).normalized()
 	look_at(player.global_position, Vector3.UP)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,8 +25,11 @@ func _physics_process(delta):
 			
 	global_position += v
 	
-func reverseDirection():
-	direction = -direction
+func returnToSender():
+	var sender = get_parent()
+	var senderCenter = Vector3(sender.global_position.x, sender.global_position.y + 1, sender.global_position.z)
+	direction = (senderCenter - global_position).normalized()
+	look_at(senderCenter, Vector3.UP)
 
 func destroyIfOutOfBounds(): 	#Not Working
 	#boundaries of scene
@@ -50,7 +53,8 @@ func destroyIfOutOfBounds(): 	#Not Working
 
 func _on_area_3d_body_entered(body):
 	if body.name == "SaberBlade":
-		reverseDirection()
-	else:
-		#print("Bolt Colission, destroying...")
+		returnToSender()
+	elif body.name != get_parent().name:
+		#print("Bolt Colission, destroying...")		
 		queue_free()
+		
