@@ -5,16 +5,16 @@ var timer = null
 signal on_enemy_died
 
 func shoot():
-	print("Shoot")
+	#print("Shoot")
 	var boltScene = load("res://bolt.tscn")
 	
 	var boltInstance = boltScene.instantiate()
 
 	boltInstance.position = $Marker3D.global_position
-	print("enemy position: " + str(global_position) + " | marker position: " + str($Marker3D.global_position))
+	#print("enemy position: " + str(global_position) + " | marker position: " + str($Marker3D.global_position))
 	
-	#Make bolt a child of parent scene (Main)
-	get_parent().add_child(boltInstance)
+	
+	add_child(boltInstance)
 
 
 func startTimer():

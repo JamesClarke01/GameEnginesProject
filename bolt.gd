@@ -44,7 +44,7 @@ func destroyIfOutOfBounds(): 	#Not Working
 		global_position.y > Y_HIGH_BOUND or 
 		global_position.z < Z_LOW_BOUND or 
 		global_position.z > Z_HIGH_BOUND):
-			print("Destroy")
+			#print("Destroy")
 			queue_free()	
 
 
@@ -52,5 +52,5 @@ func _on_area_3d_body_entered(body):
 	if body.name == "SaberBlade":
 		reverseDirection()
 	else:
-		print("Bolt Colission, destroying...")
+		#print("Bolt Colission, destroying...")
 		queue_free()
