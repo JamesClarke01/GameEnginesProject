@@ -6,9 +6,11 @@ var direction
 var player
 var target
 
+var sender
+
 # Called when the node enters the scene tree for the first time.
 func _ready():	
-	player = $"../../XROrigin3D/XRCamera3D"
+	player = $"../XROrigin3D/XRCamera3D"
 	direction = (player.global_position - global_position).normalized()
 	look_at(player.global_position, Vector3.UP)
 	
@@ -26,10 +28,14 @@ func _physics_process(delta):
 	global_position += v
 	
 func returnToSender():
-	var sender = get_parent()
-	var senderCenter = Vector3(sender.global_position.x, sender.global_position.y + 1, sender.global_position.z)
-	direction = (senderCenter - global_position).normalized()
-	look_at(senderCenter, Vector3.UP)
+	if sender != null:
+		var senderCenter = Vector3(sender.global_position.x, sender.global_position.y + 1.5, sender.global_position.z)
+		direction = (senderCenter - global_position).normalized()
+		look_at(senderCenter, Vector3.UP)
+	else:
+		print("Sender doesn't exist")
+		direction = -direction
+		
 
 func destroyIfOutOfBounds(): 	#Not Working
 	#boundaries of scene
@@ -51,10 +57,12 @@ func destroyIfOutOfBounds(): 	#Not Working
 			queue_free()	
 
 
+
+
 func _on_area_3d_body_entered(body):
 	if body.name == "SaberBlade":
 		returnToSender()
-	elif body.name != get_parent().name:
-		#print("Bolt Colission, destroying...")		
+	elif body == sender:
+		sender.kill()
 		queue_free()
 		
