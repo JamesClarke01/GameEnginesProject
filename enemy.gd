@@ -19,7 +19,9 @@ func shoot():
 	boltInstance.sender = self
 	
 	#Make a child of Main
+	$BlasterSound.play()
 	get_parent().add_child(boltInstance)
+	
 
 
 func startTimer():
@@ -30,24 +32,6 @@ func startTimer():
 	timer.set_wait_time(time) #timer every 1 sec
 	timer.set_one_shot(false) #loop timer
 	timer.start()
-
-"""
-func lookAtPlayer():
-	# Calculate the direction vector
-	var direction = (player.global_transform.origin - global_transform.origin).normalized()
-
-	# Calculate the rotation angle around the Y-axis
-	var angle = atan2(direction.x, direction.z)
-
-	# Create a quaternion for the Y-axis rotation
-	var rotation_quat = Quaternion(Vector3(0, 1, 0), angle)
-
-	var rotated_x = rotation_quat.x
-	var rotated_z = rotation_quat.z
-
-	global_transform.basis.x = Vector3(rotated_x.x, rotated_x.y, rotated_x.z)
-	global_transform.basis.z = Vector3(rotated_z.x, rotated_z.y, rotated_z.z)
-"""
 
 func lookAtPlayer():
 	var target = player.global_position
@@ -74,7 +58,7 @@ func _process(delta):
 	
 
 func kill():
-	on_enemy_died.emit()
+	on_enemy_died.emit(global_position)
 	queue_free()
 	
 
@@ -84,5 +68,4 @@ func _on_area_3d_body_entered(body):
 	if body.name == "SaberBlade": # or typeof(body) == BOLT_TYPE
 		print("saber or bolt entered")
 		
-		on_enemy_died.emit()
-		queue_free()
+		kill()

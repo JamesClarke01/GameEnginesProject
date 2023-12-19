@@ -61,8 +61,14 @@ func destroyIfOutOfBounds(): 	#Not Working
 
 func _on_area_3d_body_entered(body):
 	if body.name == "SaberBlade":
+		if randi_range(0, 1) == 1:
+			$DeflectSound1.play()
+		else:
+			$DeflectSound2.play()
 		returnToSender()
 	elif body == sender:
 		sender.kill()
+		queue_free()
+	else:
 		queue_free()
 		
