@@ -94,6 +94,19 @@ We used two label3D nodes which we attatched the the player camera to display th
 | 8             | R2D2 Sounds                        |                      |
 | 9             | Blaster Sounds                     |                      |
 
+# What We are most proud of in this assignment
+- We are proud of text animation for R2D2
+- We are proud of the enemy spawning code, and how it distributes enemies evenly and randomly throughout the level
+- We are proud of the sound design and general atmosphere created
+- We are proud of how well we managed to capture the feeling of being a Jedi!
 
-## Notes
+# What we Learned
+- We learned the intricacies of Godot, and how powerful it is at creating game prototypes
+- We learned how challenging the process of developing interconnected systems can be
+- We learned the planning and time required to build a polished game
+
+# Project Proposal
+The game will be Star Wars themed in which the player is moving through an environment on a moving platform using a lightsaber to deflect blaster beams.
+
+# Miscellaneous Notes
 The commit message for commit - "e451a6d" was not changed from the prior message as intended. A round system was implemented alongside an incomplete enemy spawning system, changes were also made to scenes.
