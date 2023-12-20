@@ -11,12 +11,22 @@ Video:
 [![YouTube](https://img.youtube.com/vi/so_m6FLvtvA/hqdefault.jpg)](https://youtu.be/so_m6FLvtvA?si=qfMRXwqMvKNjLBHO)
 
 
-# 
-A Star Wars themed game in which the player moves through an environment on a moving platform and uses a lightsaber to deflect blaster beams.
-
-## Description
+# Description of the project
 This is a Star Wars themed game where the player has to fight waves of enemies of increasing size, by deflecting lasers back at them or by slashing them with the lightsaber.
 
+# Instructions for use
+## To Deploy on Meta Quest
+- Run on Godot 4.1
+- Run though Quest Link with link cable or Air Link.
+or
+- Deploy to headset using android.
+
+## In-Game Instructions
+- Move around with right joystick
+- Look around with left joystick
+- Swing lightsaber in right hand to deflect bolts and destroy enemies!
+
+# How it Works
 ## Wave System
 The amount of enemies is determined by the exponential function below:
 ```
@@ -36,10 +46,10 @@ When the enemy is killed, it emits a signal to notify the main scene that an ene
 All of the sounds used in this project were sampled from the Star Wars movies and edited by us using the Audacity software to make integration into the game more seamless.
 
 ## Player
-For player control we used various nodes from XR tools, such as XROrigin. We attached a lightsaber object to the right hand.
+For player control we used various nodes from XR tools, such as XROrigin. We attached a lightsaber to the right hand, that the player can swing to deflect bolts and attack enemies.
 
 ## Lightsaber object
-
+This has an Area3D collision object on the blade to handle collisions with the bolts and enemies. A directional sound can be heard from it as the player moves it.
 
 ## Enemies
 The enemies will face the player as the player moves through the level. Each enemy is given a unique random interval that they will fire at. 
@@ -57,6 +67,32 @@ We added a space skybox image, which can be seen through the large hangar view. 
 
 ## User Interface
 We used two label3D nodes which we attatched the the player camera to display the players current health and the current wave the player is on.
+
+# List of Scenes/Assets
+| Scene/Asset  No. | Name                               | Source                                                                                     |
+| ---------------- | ---------------------------------- | ------------------------------------------------------------------------------------------ |
+| 1                | enemy.obj                          | Combined stormtrooper and blaster model, and posed with custom skeleton. References 1 & 10 | 
+| 2                | Lightsaber Model                   |                                                                                            |
+| 3                | R2D2 model                         |                                                                                            |
+| 4                | Wilhelm Scream                     |                                                                                            |
+| 5                | Lego Star Wars Trooper Death Sound |                                                                                            |
+| 6                | Miscellaneous Lightsaber Sounds    | The Star Wars Movies                                                                       |
+| 7                | Hangar Model                       |                                                                                            |
+| 8                | R2D2 Sounds                        |                                                                                            |
+| 9                | Blaster Sounds                     |                                                                                            |
+
+# References
+| Reference No. | Reference Name                     | Source               |
+| ------------- | ---------------------------------- | -------------------- |
+| 1             | Stormtrooper Model                 |                      |
+| 2             | Lightsaber Model                   |                      |
+| 3             | R2D2 model                         |                      |
+| 4             | Wilhelm Scream                     |                      |
+| 5             | Lego Star Wars Trooper Death Sound |                      |
+| 6             | Miscellaneous Lightsaber Sounds    | The Star Wars Movies |
+| 7             | Hangar Model                       |                      |
+| 8             | R2D2 Sounds                        |                      |
+| 9             | Blaster Sounds                     |                      |
 
 
 ## Notes
