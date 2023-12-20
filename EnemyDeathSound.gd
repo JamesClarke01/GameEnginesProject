@@ -3,7 +3,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Dead")
+	$SaberSound.play()
 	if randi_range(1, 5) == 5:
 		$WilhelmSound.play()
 	else:
