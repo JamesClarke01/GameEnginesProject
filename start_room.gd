@@ -9,12 +9,12 @@ var r2Dialogue
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	r2Speech = $Speech
+	r2Speech = $R2D2/Speech
 	textTimer = $TextTimer
 	phraseTimer = $PhraseTimer
 	textIndex = 0
 	phraseIndex = 0
-	r2Dialogue = ["The last guy that went in there\ndidn't last very long...", "Are you sure you want to do this?", "Well... If you say so.", "Go ahead and hit that lever when you're ready.\nGood luck!"]
+	r2Dialogue = ["The last guy that went in there\ndidn't last very long...", "Are you sure you want to do this?", "Well... If you say so.", "Go ahead and hit that lever\nwhen you're ready.\nGood luck!"]
 
 	textTimer.start()
 	
