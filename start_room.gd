@@ -26,7 +26,9 @@ func _ready():
 func _process(delta):
 	if opening == true and floor.global_position.x > -25:
 		floor.global_position.x += 5 * Vector3(1,0,0) * delta;
-
+	else:
+		opening = false
+		
 func _on_text_timer_timeout():
 	if textIndex < len(r2Dialogue[phraseIndex]):
 		textIndex += 1
