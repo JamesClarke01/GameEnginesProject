@@ -19,7 +19,7 @@ func _ready():
 	floor = $Room/Floor
 	textIndex = 0
 	phraseIndex = 0
-	r2Dialogue = ["The last guy that went in there\ndidn't last very long...", "Are you sure you want to do this?", "Well... If you say so.", "Go ahead and hit that green button\nwhen you're ready.\nGood luck!"]
+	r2Dialogue = ["The last guy that went in there\ndidn't last very long...", "Are you sure you want to do this?", "Well... If you say so.", "Go ahead and take the plunge\nwhen you're ready.\nGood luck!"]
 	opening = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,5 +50,6 @@ func _on_phrase_timer_timeout():
 
 
 func _on_button_press_body_entered(body):
-	opening = true
+	pass
+	#opening = true
 	
