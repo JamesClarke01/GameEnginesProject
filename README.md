@@ -7,7 +7,7 @@ Student Number: C20375736 & C20487654
 Class Group: TU856, Game Engines 1
 
 Video:
-[!YouTube](https://img.youtube.com/vi/so_m6FLvtvA/hqdefault.jpg)](https://youtu.be/so_m6FLvtvA?si=qfMRXwqMvKNjLBHO)
+[[!YouTube](https://img.youtube.com/vi/so_m6FLvtvA/hqdefault.jpg)](https://youtu.be/so_m6FLvtvA?si=qfMRXwqMvKNjLBHO)
 
 
 # 
