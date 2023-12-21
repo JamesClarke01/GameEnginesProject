@@ -71,9 +71,8 @@ We used two label3D nodes which we attached the the player camera to display the
 # List of Scenes/Assets
 | Scene/Asset                        | Source                                                                                     |
 | ---------------------------------- | ------------------------------------------------------------------------------------------ |
-| enemy.obj                          | Combined stormtrooper and blaster model, and posed with custom skeleton. References 1 & 10 | 
-| Lightsaber.tscn                    | Meshes taken from a model. Reference 2 |
-| R2D2 model                         | Reference 3 |
+| Stormtrooper Model                 | Combined stormtrooper and blaster model, and posed with custom skeleton. References 1 & 10 | 
+| R2D2 Model                         | Reference 3 |
 | Wilhelm Scream                     | Reference 4 |
 | Lego Star Wars Trooper Death Sound | Reference 5 |
 | Lightsaber Sounds                  | Reference 6 |
@@ -82,12 +81,12 @@ We used two label3D nodes which we attached the the player camera to display the
 | Blaster Sounds                     | Reference 9 |
 | Duel of the fates/Theme            | Reference 11 |
 | bolt.tscn                          | Custom |
-| start_room.tscn                    | Custom |
+| start_room.tscn                    | R2D2 Model used. Reference 8 |
 | main.tscn                          | Custom |
-| EnemyDeathSound.tscn               | Custom |
-| enemy.tscn                         | Custom |
-| Hangar.tscn                        | Custom |
-| Lightsaber.tscn                    | Custom |
+| EnemyDeathSound.tscn               | Uses sound effects. Reference 4 & 5 |
+| enemy.tscn                         | Uses customised stormtrooper model. Reference 1 & 10|
+| Hangar.tscn                        | Reference 7 |
+| Lightsaber.tscn                    | Meshes taken from a model. Reference 2 |
 
 
 
