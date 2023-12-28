@@ -103,7 +103,7 @@ We used two label3D nodes which we attached the the player camera to display the
 | 8             | R2D2 Sounds                        | https://www.soundboard.com/sb/Toyota974 |
 | 9             | Blaster Sounds                     | https://www.youtube.com/watch?v=D5wNdvLqZPE&ab_channel=soundeffects |
 | 10            | Blaster Model                      | https://sketchfab.com/3d-models/low-poly-e11-blaster-0b2f979f1455405488869f02c29d91ea |
-| 11            | DUEL OF THE FATES GOES HERE        |  |
+| 11            | "Duel of the Fates" BGM            | https://youtu.be/D_2bluVPsb0?si=AXFE00siuHNWJdyz |
 
 # What We are most proud of in this assignment
 - We are proud of text animation for R2D2
