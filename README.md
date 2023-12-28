@@ -85,7 +85,7 @@ We used two label3D nodes which we attached the the player camera to display the
 | main.tscn                          | Custom |
 | EnemyDeathSound.tscn               | Uses sound effects. Reference 4 & 5 |
 | enemy.tscn                         | Uses customised stormtrooper model. Reference 1 & 10|
-| Hangar.tscn                        | Reference 7 |
+| Hangar.tscn                        | Colour added to hangar model. Reference 7 |
 | Lightsaber.tscn                    | Meshes taken from a model. Reference 2 |
 
 
